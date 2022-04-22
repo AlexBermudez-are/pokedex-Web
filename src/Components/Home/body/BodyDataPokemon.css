@@ -1,0 +1,63 @@
+.contenedor-De-Pokemons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 100px;
+    animation-name: introAnimacion;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    transition: all 1s ease;
+}
+
+.contenedor-De-Pokemons.active {
+    width: 70%;
+    transition: all 1s ease;
+    padding-top: 1%;
+}
+
+.focus-Pokemon {
+    transform: translate(105%, 1rem);
+    transition: transform 1s ease;
+    position: fixed;
+    right: 0;
+}
+
+.focus-Pokemon.active {
+    transform: translate(0px, -2rem);
+    transition: transform 1s ease;
+    width: 30%;
+}
+
+.svgcito {
+    margin-top: 5%;
+    height: 150px;
+    width: 150px;
+    margin-left: 45%;
+    cursor: pointer;
+    border: 5px black solid;
+    border-radius: 50%;
+    margin-bottom: 5%;
+    transition: all .3s ease;
+}
+
+.svgcito:hover {
+    border: 5px #81beff solid;
+    fill: #81beff;
+    transition: all .3s ease;
+}
+
+@keyframes buscadorActive {
+    
+}
+
+@keyframes introAnimacion {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

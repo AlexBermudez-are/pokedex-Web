@@ -1,0 +1,22 @@
+.contenedorBuscadorPokemon {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.inputBusquedaPokemon {
+    width: 75%;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.btnSubmitBusquedaPokemon {
+    width: 10%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}

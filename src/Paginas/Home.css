@@ -1,0 +1,65 @@
+.contenido-Pokeball-Red {
+    background-color: red;
+    width: 100%;
+    height: 366px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 25px solid black;
+    transform: translate(0, 0);
+    transition: all 3s ease;
+    z-index: 998;
+}
+
+.contenido-Pokeball-Red.active{
+    transform: translate(0, -150%);
+    transition: all 3s ease;
+}
+
+.img-Logo-Pokeball {
+    padding-top: 4%;
+    text-align: center;
+    width: 50%;
+    height: 200px;
+    animation-name: animacionLogo;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.btn-Pokeball-Inicial {
+    width: 150px;
+    border-radius: 100px;
+    height: 150px;
+    position: absolute;
+    top: 85%;
+    border: 25px solid;
+    cursor: pointer;
+}
+
+.contenido-Pokeball-White {
+    width: 100%;
+    height: 366px;
+    background-color: #eee6e6;
+    z-index: 997;
+}
+
+.contenido-Pokeball-White.active{
+    transform: translate(0, 150%);
+    transition: all 3s ease;
+}
+
+/* keyframes */
+
+@keyframes animacionLogo {
+    0% {
+        margin-top: -3%;
+    }
+
+    50% {
+        margin-top: 0%;
+    }
+
+    100% {
+        margin-top: -3%
+    }
+}

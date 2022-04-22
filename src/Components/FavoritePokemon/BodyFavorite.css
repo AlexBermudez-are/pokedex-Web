@@ -1,0 +1,12 @@
+.contenedor-Pokemons-Favoritos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 100px;
+    animation-name: introAnimacion;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    transition: all 1s ease;
+}

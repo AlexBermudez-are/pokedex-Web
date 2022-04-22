@@ -1,0 +1,30 @@
+.pokeSpinner {
+    animation-name: rotacionPokeball;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    width: 10%;
+}
+
+.spinerContenedor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #ff00003d;
+}
+
+@keyframes rotacionPokeball {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
