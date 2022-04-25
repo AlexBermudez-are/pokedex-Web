@@ -4,12 +4,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
     top: 0;
     bottom: 22px;
     right: 0;
     left: 0;
     background-color: #ff00003d;
+    height: 640px;
 }
 
 .spinerContenedorNoPokemons h3 {
@@ -18,8 +18,18 @@
     text-align: center;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width:1440px) and (max-height:705px) {
+    .spinerContenedorNoPokemons {
+        height: 550px;
+    }
     .spinerContenedorNoPokemons h3 {
         font-size: 1.5rem;
+    }
+}
+
+@media(max-width:320px){
+    .spinerContenedorNoPokemons h3 {
+        font-size: 1.5rem;
+        width: 80%;
     }
 }

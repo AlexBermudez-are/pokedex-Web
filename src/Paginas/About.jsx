@@ -31,7 +31,7 @@ const About = () => {
           </p>
         </section>
       </div>
-      <section style={{marginTop:"10%"}}>
+      <section className='footer-About'>
         <Footer />
       </section>
     </div>

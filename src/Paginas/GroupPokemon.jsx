@@ -2,7 +2,6 @@ import React from 'react'
 import Footer from '../Components/Footer/Footer'
 import GroupPokemonBody from '../Components/GroupPokemons/GroupPokemonBody'
 import Header from '../Components/Home/Header/Header'
-import './GroupPokemon.css'
 
 const GroupPokemon = () => {
     return (

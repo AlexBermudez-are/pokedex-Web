@@ -6,7 +6,6 @@ import BodyFavorite from '../Components/FavoritePokemon/BodyFavorite'
 import Footer from '../Components/Footer/Footer'
 import Header from '../Components/Home/Header/Header'
 import FavoritePokemon from '../Context/FavoritePokemon'
-import './Favorites.css'
 
 const Favorites = () => {
 

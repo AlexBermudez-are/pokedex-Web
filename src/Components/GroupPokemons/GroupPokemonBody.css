@@ -1,5 +1,8 @@
 .body-Pokemon-G {
+    width: 100%;
+    height: 640px;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -49,16 +52,47 @@
     height: 60%;
 }
 
-.team-Icons-Pokemon-Group{
+.team-Icons-Pokemon-Group {
     height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.info-Pokemon-Unique{
+.info-Pokemon-Unique {
     background-color: #648ddf;
     color: white;
     text-align: center;
     border-radius: 10px;
+}
+
+@media(max-width:425px) {
+    .body-Pokemon-G {
+        flex-direction: column-reverse;
+    }
+
+    .info-PokemonGroup {
+        display: flex;
+        width: 95%;
+        margin: auto;
+        margin-top: 5%;
+    }
+
+    .team-Icons-Pokemon-Group {
+        height: inherit;
+    }
+
+    .slider-Pokemon-Group {
+        width: 90%;
+        margin: auto;
+    }
+    .slider-Pokemon{
+        padding-bottom: 15%;
+    }
+    .card-Slider-Pokemon{
+        border-radius: 20px;
+    }
+    .container-White-Background{
+        border-radius: 20px;
+    }
 }

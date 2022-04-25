@@ -73,6 +73,10 @@
     border-radius: 50%;
 }
 
+.footer-About{
+    margin-top: 10%;
+}
+
 @media(max-width:1024px) {
     .info-acerca-de-mi p {
         line-height: inherit;
@@ -126,9 +130,15 @@
     .pokeball-Bottom-Right {
         width: 7%;
     }
+    .footer-About{
+        margin-top: 15%;
+    }
 }
 
 @media(max-width:425px) {
+    .container-About-Pokemon{
+        margin-top: 20%;
+    }
     .pokeball-Sup-Left {
         width: 10%;
     }
@@ -144,10 +154,14 @@
     .pokeball-Bottom-Right {
         width: 10%;
     }
+    .footer-About {
+        margin-top: 25%;
+    }
 }
 
 @media (max-width: 375px) {
     .container-About-Pokemon {
         height: 400px;
+        margin-top: 15%;
     }
 }
