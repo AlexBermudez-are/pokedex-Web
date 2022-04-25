@@ -15,4 +15,12 @@
 .spinerContenedorNoPokemonsFavorites h3 {
     color: #ff5454;
     font-size: 2rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 375px) {
+    .spinerContenedorNoPokemonsFavorites h3 {
+        font-size: 1.5rem;
+        width: 80%;
+    }
 }

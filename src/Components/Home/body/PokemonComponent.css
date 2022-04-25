@@ -7,7 +7,8 @@
     border-radius: 5%;
     transition: all .5s ease;
 }
-.container-Card-Pokemon:hover{
+
+.container-Card-Pokemon:hover {
     transform: scale(1.05);
     cursor: pointer;
     transition: all .3s ease;
@@ -55,4 +56,38 @@
     top: 6%;
     right: 10%;
     cursor: pointer;
+}
+
+@media screen and (max-width:1024px) and (min-width:769px) {
+    .container-Card-Pokemon {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:768px) and (min-width: 426px) {
+    .container-Card-Pokemon {
+        width: 75%;
+    }
+
+    .container-Card-Pokemon {
+        transition: none;
+        transform: none;
+    }
+
+    .container-Card-Pokemon:hover {
+        transition: none;
+        transform: none;
+    }
+}
+@media screen and (max-width:425px){
+    .container-Card-Pokemon{
+        width: 80%;
+        transition: none;
+        transform: none;
+    }
+
+    .container-Card-Pokemon:hover {
+        transition: none;
+        transform: none;
+    }
 }

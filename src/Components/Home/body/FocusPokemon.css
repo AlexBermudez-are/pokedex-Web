@@ -77,18 +77,20 @@
     text-align: center;
 }
 
-.estadisticas-Contenedor{
+.estadisticas-Contenedor {
     width: 85%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .estadisticas-Contenedor h3 {
     text-align: center;
     margin-top: 5%;
     margin-bottom: 5%;
 }
-.btn-Agregar-Pokemon{
+
+.btn-Agregar-Pokemon {
     width: 70%;
     height: 50px;
     margin: auto;
@@ -101,6 +103,152 @@
     border-radius: 10px;
 }
 
-@media screen and (max-height:705px) and (max-width:1440px) and (min-width:1025px) {
-    
+@media screen and (max-height:705px) and (max-width:1440px) and (min-width:1025px) {}
+
+@media(max-width:1024px) and (min-width:769px) {
+    .contenedor-Hijo-Focus-Pokemon {
+        height: 470px;
+    }
+
+    .types-Focus-Pokemon img {
+        height: 100px;
+    }
+
+    .types-Focus-Pokemon h3 {
+        margin: 0;
+        color: white;
+        font-size: 3vw;
+        width: 100%;
+    }
+
+    .types-Focus-Pokemon-Name {
+        margin-top: 10%;
+    }
+
+    .focus-Habilidades {
+        align-items: flex-start;
+        height: 170px
+    }
+}
+
+@media screen and (max-width:768px) and (min-width: 550px) {
+
+    .contenedor-Focus-Pokemon {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        border-radius: 5%;
+        height: 67%;
+        margin-top: 19%;
+    }
+
+    .close-Focus-Component {
+        height: 40px;
+        width: 40px;
+    }
+
+    .fav-Focus-Style {
+        height: 40px;
+        width: 40px;
+    }
+
+    .contenedor-Hijo-Focus-Pokemon {
+        height: 425px;
+    }
+
+    .types-Focus-Pokemon h3 {
+        width: 100%;
+        margin: 5% 0;
+    }
+
+    .types-Focus-Pokemon img {
+        height: 100px;
+        width: 40%;
+    }
+
+    .btn-Agregar-Pokemon {
+        margin-top: 3%;
+        width: 100%;
+    }
+
+    .types-Focus-Pokemon {
+        width: 90%;
+    }
+
+    .types-Focus-Pokemon-Name {
+        width: 100%;
+    }
+
+    .focus-Habilidades {
+        height: 150px;
+        padding-top: 2%;
+    }
+
+    .estadisticas-Contenedor h3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width:549px) and (min-width:426px) {
+    .contenedor-Hijo-Focus-Pokemon {
+        height: 435px;
+    }
+
+    .contenedor-Focus-Pokemon {
+        width: 65%;
+        height: 60%;
+    }
+
+    .types-Focus-Pokemon img {
+        width: 50%;
+        height: 100px;
+    }
+
+    .estadisticas-Contenedor h3 {
+        display: none;
+    }
+
+    .focus-Habilidades {
+        padding-top: 5%;
+    }
+
+    .btn-Agregar-Pokemon {
+        margin-top: 4%;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .contenedor-Focus-Pokemon {
+        height: 495px;
+        margin-top: 25%;
+    }
+
+    .contenedor-Hijo-Focus-Pokemon {
+        height: 450px;
+    }
+
+    .types-Focus-Pokemon img {
+        width: 45%;
+        height: 95px;
+    }
+
+    .types-Focus-Pokemon h3 {
+        margin: 5% auto;
+        width: 90%;
+    }
+
+    .estadisticas-Contenedor {
+        margin-top: 5%;
+    }
+
+    .estadisticas-Contenedor h3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .contenedor-Focus-Pokemon {
+        margin-top: 35%;
+        width: 95%;
+    }
 }

@@ -22,13 +22,23 @@
 }
 
 @media screen and (max-width:768px) and (min-width:426px) {
-    .contenedorBuscadorPokemon{
+    .contenedorBuscadorPokemon {
         width: 35%;
+    }
+
+    .btnSubmitBusquedaPokemon {
+        width: 15%;
     }
 }
 
-@media screen and (max-width:425px){
-    .contenedorBuscadorPokemon{
+@media screen and (max-width:425px) {
+    .contenedorBuscadorPokemon {
         width: 70%;
+    }
+}
+
+@media(max-width:375px) {
+    .btnSubmitBusquedaPokemon {
+        width: 15%;
     }
 }

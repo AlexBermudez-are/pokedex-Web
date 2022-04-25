@@ -1,9 +1,11 @@
 .stats-Component {
+    width: 80%;
+    justify-content: center;
+    margin: auto;
     display: flex;
-    justify-content: revert;
-    text-align: center;
     font-weight: 900;
     align-items: center;
+    text-align: center;
 }
 
 .stat-Width {

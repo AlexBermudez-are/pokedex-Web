@@ -24,7 +24,7 @@ const StatsPokemon = ({ el }) => {
                 {el.stat.name[0].toUpperCase()}{el.stat.name.slice(1)}:
             </section>
             &nbsp;
-            <section style={{ width: el.base_stat, backgroundColor: statColor, border:`5px solid ${statColor}`}} className='stat-Width'></section>
+            <section style={{ color: statColor }}>{el.base_stat}</section>
         </div>
     )
 }

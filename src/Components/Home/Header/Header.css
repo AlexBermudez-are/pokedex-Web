@@ -36,6 +36,12 @@
     display: none;
 }
 
+@media screen and (max-width:1024px) {
+    .contenedorRedireccionesHeader a {
+        font-size: 2vw;
+    }
+}
+
 @media screen and (max-width:768px) and (min-width:426px) {
     .headerContenedor {
         justify-content: space-evenly;
@@ -43,6 +49,10 @@
 
     .contenedorRedireccionesHeader {
         width: 60%;
+    }
+
+    .contenedorRedireccionesHeader a {
+        font-size: 2.5vw;
     }
 }
 
@@ -54,7 +64,7 @@
         transition: all .3s ease;
     }
 
-    .hamburger.is-active{
+    .hamburger.is-active {
         left: 45%;
         transition: all .3s ease;
     }
@@ -79,7 +89,10 @@
         transition: all .3s ease;
     }
 
-    .headerContenedor{
+    .headerContenedor {
         justify-content: right;
+    }
+    .contenedorRedireccionesHeader a {
+        font-size: 6vw;
     }
 }

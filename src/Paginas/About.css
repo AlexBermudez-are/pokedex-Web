@@ -72,3 +72,82 @@
     box-shadow: inset 0px 0px 20px 1px;
     border-radius: 50%;
 }
+
+@media(max-width:1024px) {
+    .info-acerca-de-mi p {
+        line-height: inherit;
+    }
+}
+
+@media(max-width:768px) {
+    .foto-Personal {
+        width: 40%;
+        justify-content: flex-start;
+    }
+
+    .foto-Personal img {
+        width: 70%;
+        margin-left: 10%;
+    }
+
+    .info-acerca-de-mi {
+        width: 50%;
+    }
+
+    .info-acerca-de-mi p {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+@media(max-width:550px) {
+    .container-About-Pokemon {
+        flex-direction: column;
+    }
+
+    .info-acerca-de-mi {
+        width: 90%;
+    }
+}
+
+@media(max-width:768px) {
+    .pokeball-Sup-Left {
+        width: 7%;
+    }
+
+    .pokeball-Sup-Right {
+        width: 7%;
+    }
+
+    .pokeball-Bottom-Left {
+        width: 7%;
+    }
+
+    .pokeball-Bottom-Right {
+        width: 7%;
+    }
+}
+
+@media(max-width:425px) {
+    .pokeball-Sup-Left {
+        width: 10%;
+    }
+
+    .pokeball-Sup-Right {
+        width: 10%;
+    }
+
+    .pokeball-Bottom-Left {
+        width: 10%;
+    }
+
+    .pokeball-Bottom-Right {
+        width: 10%;
+    }
+}
+
+@media (max-width: 375px) {
+    .container-About-Pokemon {
+        height: 400px;
+    }
+}

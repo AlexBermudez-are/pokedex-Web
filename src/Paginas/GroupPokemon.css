@@ -1,38 +1,37 @@
-.footer-Fav {
-    margin-top: 45.5%;
+.footer-Group{
+    margin-top: 45%;
 }
-
 @media screen and (max-width:1440px) and (min-width:1025px) {
-    .footer-Fav {
+    .footer-Group {
         margin-top: 41%;
     }
 }
 
 @media screen and (max-width:1024px) and (min-width:769px) {
-    .footer-Fav {
+    .footer-Group {
         margin-top: 54%;
     }
 }
 
 @media screen and (max-width:768px) and (min-width:426px) {
-    .footer-Fav {
+    .footer-Group {
         margin-top: 72%;
     }
 }
 
 @media screen and (max-width:425px) {
-    .footer-Fav {
+    .footer-Group {
         margin-top: 130%;
     }
 }
 
 @media screen and (max-width: 375px) {
-    .footer-Fav {
+    .footer-Group {
         margin-top: 147%;
     }
 }
 @media screen and (max-width: 320px){
-    .footer-Fav {
+    .footer-Group {
         margin-top: 172%;
     }
 }
