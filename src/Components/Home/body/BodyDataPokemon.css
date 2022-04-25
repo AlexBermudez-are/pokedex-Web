@@ -62,7 +62,7 @@
     }
 }
 
-@media screen and (max-height:670px) and (max-width:425px) {
+@media screen and (max-width:425px) {
     .contenedor-De-Pokemons {
         grid-template-columns: repeat(1, 1fr);
         margin-top: 10%;
