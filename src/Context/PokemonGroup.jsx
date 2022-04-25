@@ -10,6 +10,8 @@ const powerStats = [{
     "speed": 0
 }]
 
+let contador = 0;
+
 const PokemonGroup = createContext()
 
 const PokemonGroupProvider = ({ children }) => {
@@ -22,30 +24,34 @@ const PokemonGroupProvider = ({ children }) => {
 
         const arregloF = []
 
-        alert('Se agrego el personaje al grupo')
+        if (contador >= 0 && contador < 5) {
+            alert('Se agrego el personaje al grupo')
+            powerStats[0].hp += personaje.stats[0]["base_stat"]
+            powerStats[0].attack += personaje.stats[1]["base_stat"]
+            powerStats[0].defense += personaje.stats[2]["base_stat"]
+            powerStats[0]["special-attack"] += personaje.stats[3]["base_stat"]
+            powerStats[0]["special-defense"] += personaje.stats[4]["base_stat"]
+            powerStats[0].speed += personaje.stats[5]["base_stat"]
 
-        powerStats[0].hp += personaje.stats[0]["base_stat"]
-        powerStats[0].attack += personaje.stats[1]["base_stat"]
-        powerStats[0].defense += personaje.stats[2]["base_stat"]
-        powerStats[0]["special-attack"] += personaje.stats[3]["base_stat"]
-        powerStats[0]["special-defense"] += personaje.stats[4]["base_stat"]
-        powerStats[0].speed += personaje.stats[5]["base_stat"]
-
-        arregloF.push(personaje)
-        setPokemonGroup([...pokemonGroup, ...arregloF])
-        setStats(powerStats)
+            arregloF.push(personaje)
+            setPokemonGroup([...pokemonGroup, ...arregloF])
+            setStats(powerStats)
 
 
-        let StatDominating = powerStats[0].hp
-        const powerArr = powerStats[0]
+            let StatDominating = powerStats[0].hp
+            const powerArr = powerStats[0]
 
-        for (const key in powerArr) {
+            for (const key in powerArr) {
 
-            if (powerArr[key] >= StatDominating) {
-                StatDominating = powerArr[key]
-                setstatDominator(key)
+                if (powerArr[key] >= StatDominating) {
+                    StatDominating = powerArr[key]
+                    setstatDominator(key)
+                }
+
             }
-
+            contador++
+        } else {
+            alert('haz alcanzado el limite de pokemons en el grupo')
         }
 
     }
@@ -53,35 +59,36 @@ const PokemonGroupProvider = ({ children }) => {
     const eliminarPokemon = (personaje) => {
 
         let isDelete = window.confirm(
-            `¿Estás seguro que lo quieres eliminar a ${personaje.name}?`
+            `¿Estás seguro de querer eliminar a ${personaje.name}?`
         );
 
-        if (isDelete) {
+        if (isDelete && contador >= 1) {
             let newData = pokemonGroup.filter((el) => {
                 return el.name !== personaje.name
             });
             setPokemonGroup(newData);
-        }
 
-        powerStats[0].hp -= personaje.stats[0]["base_stat"]
-        powerStats[0].attack -= personaje.stats[1]["base_stat"]
-        powerStats[0].defense -= personaje.stats[2]["base_stat"]
-        powerStats[0]["special-attack"] -= personaje.stats[3]["base_stat"]
-        powerStats[0]["special-defense"] -= personaje.stats[4]["base_stat"]
-        powerStats[0].speed -= personaje.stats[5]["base_stat"]
+            powerStats[0].hp -= personaje.stats[0]["base_stat"]
+            powerStats[0].attack -= personaje.stats[1]["base_stat"]
+            powerStats[0].defense -= personaje.stats[2]["base_stat"]
+            powerStats[0]["special-attack"] -= personaje.stats[3]["base_stat"]
+            powerStats[0]["special-defense"] -= personaje.stats[4]["base_stat"]
+            powerStats[0].speed -= personaje.stats[5]["base_stat"]
 
-        setStats(powerStats)
+            setStats(powerStats)
 
-        let StatDominating = powerStats[0].hp
-        const powerArr = powerStats[0]
+            let StatDominating = powerStats[0].hp
+            const powerArr = powerStats[0]
 
-        for (const key in powerArr) {
+            for (const key in powerArr) {
 
-            if (powerArr[key] >= StatDominating) {
-                StatDominating = powerArr[key]
-                setstatDominator(key)
+                if (powerArr[key] >= StatDominating) {
+                    StatDominating = powerArr[key]
+                    setstatDominator(key)
+                }
+
             }
-
+            contador--
         }
 
     }

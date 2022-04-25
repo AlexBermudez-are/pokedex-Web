@@ -4,17 +4,9 @@ import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 import { useContext } from 'react'
 import PokemonGroup from '../../Context/PokemonGroup'
-import SpinnerPokeball from '../Spinners/SpinnerPokeball'
 import PokemonGroupComponent from './PokemonGroupComponent'
 import './GroupPokemonBody.css'
-
-// const btnActiveArray = {
-//     pokemon1: "#696969",
-//     pokemon2: "#979797",
-//     pokemon3: "#979797",
-//     pokemon4: "#979797",
-//     pokemon5: "#979797"
-// }
+import SpinnerNoPokemons from '../Spinners/SpinnerNoPokemons'
 
 const stats = {
     'hp': "#ff0de1", 'attack': '#ff984f', 'defense': '#88f4ff',
@@ -44,13 +36,13 @@ const GroupPokemonBody = () => {
         const colorStat = stats[statDominator]
         setStatDominatingColor(colorStat)
     }, [statDominator])
-    
+
 
 
     return (
         <section>
             {
-                pokemonActual
+                pokemonActual && pokemonGroup.length > 0
                     ? <div className='body-Pokemon-G' ref={refSlider}>
                         <section className="slider-Pokemon-Group">
                             <div className="slider-Pokemon" >
@@ -92,7 +84,7 @@ const GroupPokemonBody = () => {
                             </div>
                         </section>
                     </div>
-                    : <SpinnerPokeball />
+                    : <SpinnerNoPokemons/>
             }
         </section>
     )

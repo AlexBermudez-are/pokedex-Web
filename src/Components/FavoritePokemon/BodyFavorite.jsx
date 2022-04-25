@@ -1,5 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
-import SpinnerPokeball from '../Spinners/SpinnerPokeball';
 import FavoriteComponent from './FavoriteComponent';
 import './BodyFavorite.css'
 import { useRef } from 'react';
@@ -7,6 +7,7 @@ import { useState } from 'react';
 import FocusPokemon from '../Home/body/FocusPokemon';
 import { useEffect } from 'react';
 import PokemonComponent from '../Home/body/PokemonComponent'
+import SpinnerNoFavorites from '../Spinners/SpinnerNoFavorites';
 
 const initialState = {
     data: {},
@@ -22,20 +23,24 @@ const BodyFavorite = ({ equipoS, buscadorPokemon, controllSearchPokemon }) => {
     const InfoPokemon = useRef()
 
     useEffect(() => {
-        if (focusPokemonControll.active) {
-            ContenedorPokemon.current.className = 'contenedor-De-Pokemons active'
-            InfoPokemon.current.className = 'focus-Pokemon active'
-        } else {
-            ContenedorPokemon.current.className = 'contenedor-De-Pokemons'
-            InfoPokemon.current.className = 'focus-Pokemon'
+        if (equipoS.length > 0) {
+            if (focusPokemonControll.active) {
+                ContenedorPokemon.current.className = 'contenedor-De-Pokemons active'
+                InfoPokemon.current.className = 'focus-Pokemon active'
+            } else {
+                ContenedorPokemon.current.className = 'contenedor-De-Pokemons'
+                InfoPokemon.current.className = 'focus-Pokemon'
+            }
         }
         return () => {
         }
     }, [focusPokemonControll])
 
+    console.log(equipoS);
+
     return (
         <div>{
-            equipoS
+            equipoS.length > 0
                 ? <div style={{ display: "flex", overflow: "hidden" }}>
                     <section className='contenedor-De-Pokemons' ref={ContenedorPokemon}>
                         {
@@ -63,7 +68,7 @@ const BodyFavorite = ({ equipoS, buscadorPokemon, controllSearchPokemon }) => {
                         }
                     </section>
                 </div>
-                : <SpinnerPokeball />
+                : <SpinnerNoFavorites />
         }</div>
     )
 }

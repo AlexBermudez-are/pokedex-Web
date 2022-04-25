@@ -3,9 +3,10 @@ import React from 'react'
 import { useContext } from 'react'
 import { useState } from 'react'
 import BodyFavorite from '../Components/FavoritePokemon/BodyFavorite'
-import BodyDataPokemon from '../Components/Home/body/BodyDataPokemon'
+import Footer from '../Components/Footer/Footer'
 import Header from '../Components/Home/Header/Header'
 import FavoritePokemon from '../Context/FavoritePokemon'
+import './Favorites.css'
 
 const Favorites = () => {
 
@@ -30,6 +31,9 @@ const Favorites = () => {
                 setBuscadorPokemon={setBuscadorPokemon}
                 controllSearchPokemon={controllSearchPokemon}
                 setControllSearchPokemon={setControllSearchPokemon} />
+            <section className='footer-Fav'>
+                <Footer />
+            </section>
         </div>
     )
 }

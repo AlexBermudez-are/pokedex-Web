@@ -1,0 +1,26 @@
+.footer-Fav{
+    margin-top: 45.5%;
+}
+@media screen and (max-height:705px) and (max-width:1440px) and (min-width:1025px) {
+    .footer-Fav{
+        margin-top: 41%;
+    }
+}
+
+@media screen and (max-height:670px) and (max-width:1024px) and (min-width:769px) {
+    .footer-Fav{
+        margin-top: 54%;
+    }
+}
+
+@media screen and (max-height:670px) and (max-width:768px) and (min-width:426px) {
+    .footer-Fav{
+        margin-top: 72%;
+    }
+}
+
+@media screen and (max-height:670px) and (max-width:425px) {
+    .footer-Fav{
+        margin-top: 72%;
+    }
+}

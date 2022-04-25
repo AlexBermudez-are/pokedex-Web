@@ -6,6 +6,7 @@ import logoPokemon from '../Assets/Img/pokemonLogo.png'
 import Header from '../Components/Home/Header/Header'
 import './Home.css'
 import { useEffect } from 'react'
+import Footer from '../Components/Footer/Footer'
 
 const Home = () => {
 
@@ -59,6 +60,7 @@ const Home = () => {
                             controllSearchPokemon={controllSearchPokemon}
                             setControllSearchPokemon={setControllSearchPokemon}
                         />
+                        <Footer />
                     </section>
                     : <section style={{ display: "flex", flexDirection: "column", overflow: "hidden", zIndex: "999" }}>
                         <div className='contenido-Pokeball-Red' ref={redPokeball}>

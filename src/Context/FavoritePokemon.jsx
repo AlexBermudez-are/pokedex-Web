@@ -21,7 +21,7 @@ const FavoritePokemonProvider = ({ children }) => {
     const eliminarPokemon = (prop) => {
 
         let isDelete = window.confirm(
-            `¿Estás seguro que lo quieres eliminar a ${prop.name}?`
+            `¿Estás seguro de querer eliminar a ${prop.name}?`
         );
 
         if (isDelete && contador > 1) contador--

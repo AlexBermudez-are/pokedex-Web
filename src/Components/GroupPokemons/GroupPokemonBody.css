@@ -27,6 +27,7 @@
     align-items: center;
     justify-content: space-evenly;
     border-radius: 200px;
+    box-shadow: inset 0px 0px 19px 1px;
 }
 
 .container-White-Background {
@@ -40,6 +41,7 @@
     background-repeat: no-repeat;
     background-size: 100% 110%;
     border-radius: 160px;
+    box-shadow: inset 0px 0px 19px 1px;
 }
 
 .container-White-Background img {

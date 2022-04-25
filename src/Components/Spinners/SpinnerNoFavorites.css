@@ -1,0 +1,18 @@
+.spinerContenedorNoPokemonsFavorites {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 22px;
+    right: 0;
+    left: 0;
+    background-color: #ff00003d;
+}
+
+.spinerContenedorNoPokemonsFavorites h3 {
+    color: #ff5454;
+    font-size: 2rem;
+}
