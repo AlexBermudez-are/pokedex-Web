@@ -36,7 +36,7 @@
     display: none;
 }
 
-@media screen and (max-height:670px) and (max-width:768px) and (min-width:426px) {
+@media screen and (max-width:768px) and (min-width:426px) {
     .headerContenedor {
         justify-content: space-evenly;
     }
@@ -46,7 +46,7 @@
     }
 }
 
-@media screen and (max-height:670px) and (max-width:425px) {
+@media screen and (max-width:425px) {
     .hamburger {
         display: block;
         position: absolute;
