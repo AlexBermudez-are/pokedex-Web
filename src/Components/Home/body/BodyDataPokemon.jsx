@@ -60,18 +60,20 @@ const BodyDataPokemon = ({ controllData, buscadorPokemon, controllSearchPokemon 
 
 
     return (
-        <div>
+        <div className='dataPokemon'>
             {
                 controllData // Evita que la pagina renderice sin respuesta de la api
-                    ? <div style={{ display: "flex", overflow: "hidden" }}>
+                    ? <div className='container-Pokemon-Data-List'>
                         <section className='contenedor-De-Pokemons' ref={ContenedorPokemon}>
                             {
                                 buscadorPokemon && controllSearchPokemon // Si se hizo una busqueda de un pokemon...
-                                // Este componente se ejecutará
-                                    ? <PokemonComponent
-                                        buscadorPokemon={buscadorPokemon}
-                                        setFocusPokemonControll={setFocusPokemonControll}
-                                    />
+                                    // Este componente se ejecutará
+                                    ? <div className='card-container-Pokemon-Search'>
+                                        <PokemonComponent
+                                            buscadorPokemon={buscadorPokemon}
+                                            setFocusPokemonControll={setFocusPokemonControll}
+                                        />
+                                    </div>
                                     : dataPokemon.map((el, key) => {
                                         return <PokemonComponent
                                             data={el} key={key}

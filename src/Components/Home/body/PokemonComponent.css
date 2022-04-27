@@ -84,6 +84,7 @@
         width: 80%;
         transition: none;
         transform: none;
+        margin-bottom: 5%;
     }
 
     .container-Card-Pokemon:hover {

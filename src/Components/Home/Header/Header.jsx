@@ -12,6 +12,8 @@ const Header = ({ setBuscadorPokemon, controllSearchPokemon, setControllSearchPo
     const location = useLocation()
     const menuInteractive = useRef()
     const menuBtn = useRef()
+    const backMenu = useRef()
+
     const [controllMenu, setControllMenu] = useState(false)
 
     const links = [
@@ -43,30 +45,34 @@ const Header = ({ setBuscadorPokemon, controllSearchPokemon, setControllSearchPo
             setControllMenu(true)
             menuBtn.current.className = 'hamburger hamburger--collapse is-active'
             menuInteractive.current.className = "contenedorRedireccionesHeader active"
-        }else{
+            backMenu.current.className = 'menu-Mobile active'
+        } else {
             setControllMenu(false)
             menuBtn.current.className = 'hamburger hamburger--collapse'
             menuInteractive.current.className = "contenedorRedireccionesHeader"
+            backMenu.current.className = 'menu-Mobile'
         }
     }
 
 
     return (
         <div className='headerContenedor'>
-            <section className='contenedorRedireccionesHeader' ref={menuInteractive}>
-                {
-                    links
-                        ? links.map((el, index) => {
-                            return <NavLink
-                                style={{ color: location.pathname === el.path ? "black" : "white" }}
-                                to={el.path}
-                                key={index}
-                            >
-                                {el.name}
-                            </NavLink>
-                        })
-                        : false
-                }
+            <section className="menu-Mobile" ref={backMenu}>
+                <section className='contenedorRedireccionesHeader' ref={menuInteractive}>
+                    {
+                        links
+                            ? links.map((el, index) => {
+                                return <NavLink
+                                    style={{ color: location.pathname === el.path ? "black" : "white" }}
+                                    to={el.path}
+                                    key={index}
+                                >
+                                    {el.name}
+                                </NavLink>
+                            })
+                            : false
+                    }
+                </section>
             </section>
             <button
                 className="hamburger hamburger--collapse"
@@ -78,12 +84,19 @@ const Header = ({ setBuscadorPokemon, controllSearchPokemon, setControllSearchPo
                     <span className="hamburger-inner"></span>
                 </span>
             </button>
-            <BuscadorPokemon
-                setBuscadorPokemon={setBuscadorPokemon}
-                controllSearchPokemon={controllSearchPokemon}
-                setControllSearchPokemon={setControllSearchPokemon}
-            />
-        </div>
+            <div className='container-Search' style={{
+                display:
+                    location.pathname === '/'
+                        ? "block"
+                        : "none",
+            }}>
+                <BuscadorPokemon
+                    setBuscadorPokemon={setBuscadorPokemon}
+                    controllSearchPokemon={controllSearchPokemon}
+                    setControllSearchPokemon={setControllSearchPokemon}
+                />
+            </div>
+        </div >
     )
 }
 

@@ -75,7 +75,7 @@
         display: flex;
         width: 95%;
         margin: auto;
-        margin-top: 5%;
+        margin-top: 40%;
     }
 
     .team-Icons-Pokemon-Group {
@@ -86,13 +86,16 @@
         width: 90%;
         margin: auto;
     }
-    .slider-Pokemon{
+
+    .slider-Pokemon {
         padding-bottom: 15%;
     }
-    .card-Slider-Pokemon{
+
+    .card-Slider-Pokemon {
         border-radius: 20px;
     }
-    .container-White-Background{
+
+    .container-White-Background {
         border-radius: 20px;
     }
 }

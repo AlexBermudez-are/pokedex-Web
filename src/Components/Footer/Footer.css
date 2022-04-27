@@ -7,7 +7,7 @@
     justify-content: space-evenly;
 }
 
-.get-In-Touch{
+.get-In-Touch {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-.get-In-Touch p{
+.get-In-Touch p {
     margin: 0;
 }
 
@@ -35,4 +35,19 @@
 
 .portfolio {
     height: 73px;
+}
+
+@media(max-width:1024px) {
+
+    .linkedin,
+    .portfolio,
+    .github {
+        width: 60px;
+    }
+}
+
+@media(max-width:425px) {
+    .icons-Container {
+        width: 65%;
+    }
 }

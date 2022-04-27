@@ -15,7 +15,7 @@ const Footer = () => {
                 <Linkedin className='linkedin' />
                 </a>
                 <a href="http://github.com/AlexBermudez-are" target="_blank" rel="noopener noreferrer">
-                    <Github />
+                    <Github className='github' />
                 </a>
                 <a
                     href="https://portfolio-alexis-bermudez.vercel.app/"

@@ -1,5 +1,5 @@
 .contenedorBuscadorPokemon {
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,9 +22,6 @@
 }
 
 @media screen and (max-width:768px) and (min-width:426px) {
-    .contenedorBuscadorPokemon {
-        width: 35%;
-    }
 
     .btnSubmitBusquedaPokemon {
         width: 15%;
@@ -33,7 +30,7 @@
 
 @media screen and (max-width:425px) {
     .contenedorBuscadorPokemon {
-        width: 70%;
+        width: 100%;
     }
 }
 
