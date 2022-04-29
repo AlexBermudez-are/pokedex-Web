@@ -72,12 +72,14 @@ const BodyDataPokemon = ({ controllData, buscadorPokemon, controllSearchPokemon 
                                         <PokemonComponent
                                             buscadorPokemon={buscadorPokemon}
                                             setFocusPokemonControll={setFocusPokemonControll}
+                                            focusPokemonControll={focusPokemonControll.data}
                                         />
                                     </div>
                                     : dataPokemon.map((el, key) => {
                                         return <PokemonComponent
                                             data={el} key={key}
                                             setFocusPokemonControll={setFocusPokemonControll}
+                                            focusPokemonControll={focusPokemonControll.data}
                                         />
                                     })
                             }

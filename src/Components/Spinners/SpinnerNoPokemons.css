@@ -27,7 +27,7 @@
     }
 }
 
-@media(max-width:320px){
+@media(max-width:425px){
     .spinerContenedorNoPokemons h3 {
         font-size: 1.5rem;
         width: 80%;

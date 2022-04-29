@@ -66,6 +66,24 @@
     border-radius: 10px;
 }
 
+@media(max-width:1024px){
+    .body-Pokemon-G{
+        height: 560px;
+    }
+    .slider-Pokemon-Group{
+        width: 60%;
+    }
+    .slider-Pokemon{
+        height: 450px;
+    }
+    .info-PokemonGroup{
+        height: 400px;
+    }
+    .team-Icons-Pokemon-Group{
+        height: 65%;
+    }
+}
+
 @media(max-width:425px) {
     .body-Pokemon-G {
         flex-direction: column-reverse;

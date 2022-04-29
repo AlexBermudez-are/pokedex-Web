@@ -36,8 +36,6 @@ const BodyFavorite = ({ equipoS, buscadorPokemon, controllSearchPokemon }) => {
         }
     }, [focusPokemonControll])
 
-    console.log(equipoS);
-
     return (
         <div>{
             equipoS.length > 0

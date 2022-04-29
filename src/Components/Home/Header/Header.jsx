@@ -2,7 +2,6 @@
 import React from 'react'
 import { useRef } from 'react'
 import { useState } from 'react'
-import { useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import BuscadorPokemon from './BuscadorPokemon'
 import './Header.css'
@@ -34,11 +33,6 @@ const Header = ({ setBuscadorPokemon, controllSearchPokemon, setControllSearchPo
             path: "/acerca-de-mi",
         }
     ];
-
-    useEffect(() => {
-        location.pathname === links.path ? console.log(location) : console.log("location")
-
-    }, [])
 
     const menu = () => {
         if (!controllMenu) {

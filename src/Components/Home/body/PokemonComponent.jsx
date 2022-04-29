@@ -38,23 +38,23 @@ const PokemonComponent = ({
             data: [first, color1, color2],
             active: true
         })
+        console.log(focusPokemonControll);
     }
 
     const agregarFavoritos = () => {
-        if (colorHearth) {
-            eliminarPokemon(first)
-            setColorHearth(false)
-        } else {
+        if (!colorHearth) {
             agregarPokemon({
                 "name": first.name,
-                "data": [first, color1, color2],
-                "active": true
+                "data": [first, color1, color2]
             })
             setColorHearth(true)
+        } else {
+            eliminarPokemon(first)
+            setColorHearth(false)
         }
     }
 
-    useEffect(() => { // Configura el color del componente según su 'type'
+    useEffect(() => { // Configura el color del componente según su 'type' y cambia la data del body si se hace una busqueda
 
         const dataPokemonUnico = async () => { // Esta funcion se ejecuta cuando la peticion tiene mas de un elemento pokemon
             // Inicio de la peticion get
@@ -104,16 +104,15 @@ const PokemonComponent = ({
         if (equipoS.length !== 0) {
             for (let index = 0; index < equipoS.length; index++) {
                 const element = equipoS[index];
-                if (element.data[0].name === first.name && element.active) {
+                if (element.data[0].name === first.name) {
                     setColorHearth(true)
                     return
                 } else {
                     setColorHearth(false)
-                    return
                 }
             }
         } else setColorHearth(false)
-    }, [])
+    }, [equipoS, focusPokemonControll])
 
 
 

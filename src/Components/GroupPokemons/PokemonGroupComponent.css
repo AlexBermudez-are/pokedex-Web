@@ -34,12 +34,21 @@
     transition: all .2s ease;
     height: 100%;
 }
-.btn-Delete:hover{
+
+.btn-Delete:hover {
     color: red;
     transition: all .2s ease;
 }
 
-@media(max-width:425px){
+@media(max-width:1024px) {
+    .container-Component-Icons-Pokemon {
+        height: 20%;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media(max-width:425px) {
     .container-Component-Icons-Pokemon {
         height: 30px;
         display: flex;
@@ -53,12 +62,14 @@
         margin-top: 3%;
         margin-bottom: 3%;
     }
+
     .container-Component-Icons-Pokemon:hover {
         transform: none;
         transition: none;
         box-shadow: none;
     }
-    .img-Icon-Pokemon-Component{
+
+    .img-Icon-Pokemon-Component {
         height: 140%;
     }
 }

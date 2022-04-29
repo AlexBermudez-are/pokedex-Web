@@ -15,7 +15,7 @@ import PokemonGroup from '../../../Context/PokemonGroup'
 const FocusPokemon = ({ focusPokemonControll, setFocusPokemonControll }) => {
 
     const { agregarPokemon, equipoS, eliminarPokemon } = useContext(FavoritePokemon)
-    const { agregarPersonaje } = useContext(PokemonGroup)
+    const { agregarPersonaje, pokemonGroup } = useContext(PokemonGroup)
     const [colorHearth, setColorHearth] = useState(false)
     const [color1, setColor1] = useState("")
     const [color2, setColor2] = useState("")
@@ -25,20 +25,33 @@ const FocusPokemon = ({ focusPokemonControll, setFocusPokemonControll }) => {
     }
 
     const agregarFavoritos = () => {
-        if (colorHearth) {
-            eliminarPokemon(focusPokemonControll[0])
-            setColorHearth(false)
-        } else {
+        if (!colorHearth) {
             agregarPokemon({
                 "name": focusPokemonControll[0].name,
-                "data": [focusPokemonControll[0], color1, color2],
-                "active": true
+                "data": [focusPokemonControll[0], color1, color2]
             })
             setColorHearth(true)
+        } else {
+            eliminarPokemon(focusPokemonControll[0])
+            setColorHearth(false)
         }
     }
 
-    useEffect(() => {
+    const agregarAlGrupo = (props) => {
+        for (let index = 0; index < pokemonGroup.length; index++) {
+            if (props.id === pokemonGroup[index].id) {
+                alert('El pokemon ya fue agregado al grupo')
+                return
+            }
+        }
+
+        if (pokemonGroup.length >= 0 && pokemonGroup.length < 5) {
+            agregarPersonaje(props)
+        }
+        if (pokemonGroup.length === 5) alert('Se a alcanzado la capacidad maxima del equipo')
+    }
+
+    useEffect(() => { // Controla el cambio de color cuando se cambia el focus de un pokemon a otro
         if (focusPokemonControll[0].types.length > 1) {
             setColor1(focusPokemonControll[1])
             setColor2(focusPokemonControll[2])
@@ -50,15 +63,14 @@ const FocusPokemon = ({ focusPokemonControll, setFocusPokemonControll }) => {
     }, [focusPokemonControll])
 
     useEffect(() => {
-        if (equipoS.length !== 0) {
+        if (equipoS.length > 0) {
             for (let index = 0; index < equipoS.length; index++) {
                 const element = equipoS[index];
-                if (element.data[0].name === focusPokemonControll[0].name && element.active) {
+                if (element.data[0].name === focusPokemonControll[0].name) {
                     setColorHearth(true)
                     return
                 } else {
                     setColorHearth(false)
-                    return
                 }
             }
         } else setColorHearth(false)
@@ -128,7 +140,7 @@ const FocusPokemon = ({ focusPokemonControll, setFocusPokemonControll }) => {
                                     }
                                 </section>
                                 <button
-                                    onClick={() => agregarPersonaje(focusPokemonControll[0])}
+                                    onClick={() => agregarAlGrupo(focusPokemonControll[0])}
                                     className='btn-Agregar-Pokemon'
                                 >Agregar al Grupo</button>
                             </div>

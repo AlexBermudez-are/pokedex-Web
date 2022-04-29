@@ -27,7 +27,7 @@
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
     .spinerContenedorNoPokemonsFavorites h3 {
         font-size: 1.5rem;
         width: 80%;

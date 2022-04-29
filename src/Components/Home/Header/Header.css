@@ -11,7 +11,7 @@
 }
 
 .menu-Mobile{
-    width: 60%;
+    width: 100%;
 }
 
 .container-Search{
@@ -65,6 +65,7 @@
         position: absolute;
         left: 5%;
         transition: all .3s ease;
+        outline: none;
     }
 
     .hamburger.is-active {
@@ -90,6 +91,7 @@
     .contenedorRedireccionesHeader.active {
         transform: translate(0, 0);
         transition: all .3s ease;
+        box-shadow: 4px 0px 20px 1px #8d4d4d;
     }
 
     .headerContenedor {
