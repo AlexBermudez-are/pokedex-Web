@@ -8,6 +8,8 @@ import { useRef } from 'react'
 import './BodyDataPokemon.css'
 import React from 'react'
 import axios from 'axios'
+import { useContext } from 'react'
+import FavoritePokemon from '../../../Context/FavoritePokemon'
 
 const initialState = {  // contiene la data del pokemon y su 'active' para cambiar el color del corazón de Favoritos
     data: {},
@@ -15,6 +17,8 @@ const initialState = {  // contiene la data del pokemon y su 'active' para cambi
 }
 
 const BodyDataPokemon = ({ controllData, buscadorPokemon, controllSearchPokemon }) => {
+
+    const { agregarPokemon, eliminarPokemon, equipoS } = useContext(FavoritePokemon)
 
     const [focusPokemonControll, setFocusPokemonControll] = useState(initialState) // Contiene la data
     // ...del pokemon que se clickea en el home.
@@ -73,13 +77,20 @@ const BodyDataPokemon = ({ controllData, buscadorPokemon, controllSearchPokemon 
                                             buscadorPokemon={buscadorPokemon}
                                             setFocusPokemonControll={setFocusPokemonControll}
                                             focusPokemonControll={focusPokemonControll.data}
+                                            equipoS={equipoS}
+                                            agregarPokemon={agregarPokemon}
+                                            eliminarPokemon={eliminarPokemon}
                                         />
                                     </div>
                                     : dataPokemon.map((el, key) => {
                                         return <PokemonComponent
                                             data={el} key={key}
                                             setFocusPokemonControll={setFocusPokemonControll}
+                                            dataPokemon={dataPokemon}
                                             focusPokemonControll={focusPokemonControll.data}
+                                            equipoS={equipoS}
+                                            agregarPokemon={agregarPokemon}
+                                            eliminarPokemon={eliminarPokemon}
                                         />
                                     })
                             }
@@ -90,6 +101,9 @@ const BodyDataPokemon = ({ controllData, buscadorPokemon, controllSearchPokemon 
                                     ? <FocusPokemon
                                         focusPokemonControll={focusPokemonControll.data}
                                         setFocusPokemonControll={setFocusPokemonControll}
+                                        equipoS={equipoS}
+                                        agregarPokemon={agregarPokemon}
+                                        eliminarPokemon={eliminarPokemon}
                                     />
                                     : false
                             }

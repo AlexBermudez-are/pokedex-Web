@@ -39,16 +39,16 @@ const FavoriteComponent = ({
     }
 
     const agregarFavoritos = () => {
-        if (colorHearth) {
-            eliminarPokemon(first.data[0])
-            setColorHearth(false)
-        } else {
+        if (!colorHearth) {
             agregarPokemon({
                 "name": first.data[0].name,
                 "data": [first.data[0], color1, color2],
                 "active": true
             })
             setColorHearth(true)
+        } else {
+            eliminarPokemon(first.data[0])
+            setColorHearth(false)
         }
     }
 
@@ -68,6 +68,18 @@ const FavoriteComponent = ({
                     const color1 = types[first.data[0].types[0].type.name]
                     setColor1(color1)
                 }
+
+                if (equipoS.length > 0 && Object.keys(first).length > 0) {
+                    for (let index = 0; index < equipoS.length; index++) {
+                        const element = equipoS[index];
+                        if (element.data[0].name === first.data[0].name) {
+                            setColorHearth(true)
+                            return
+                        } else {
+                            setColorHearth(false)
+                        }
+                    }
+                } else setColorHearth(false)
             }
         }
 
@@ -84,6 +96,18 @@ const FavoriteComponent = ({
                     setColor1(color1)
                     setColor2(false)
                 }
+
+                if (equipoS.length > 0 && buscadorPokemon) {
+                    for (let index = 0; index < equipoS.length; index++) {
+                        const element = equipoS[index];
+                        if (element.data[0].name === buscadorPokemon.name) {
+                            setColorHearth(true)
+                            return
+                        } else {
+                            setColorHearth(false)
+                        }
+                    }
+                } else setColorHearth(false)
             }
         }
 

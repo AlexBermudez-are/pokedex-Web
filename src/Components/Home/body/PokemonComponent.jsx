@@ -6,8 +6,6 @@ import { useEffect } from 'react';
 import './PokemonComponent.css'
 import TypesPokemon from '../../TypesPokemon/TypesPokemon';
 import { ReactComponent as FavComponent } from '../../../Assets/Icons/favoriteHeart.svg'
-import FavoritePokemon from '../../../Context/FavoritePokemon';
-import { useContext } from 'react';
 
 const types = {
     'normal': '#A8A878', 'fire': '#F08030', 'water': '#6890F0',
@@ -21,11 +19,13 @@ const types = {
 const PokemonComponent = ({
     setFocusPokemonControll,
     focusPokemonControll,
+    eliminarPokemon,
     buscadorPokemon, // Contiene la data del pokemon buscado
+    agregarPokemon,
+    equipoS,
     data, // "data" contiene la data de la peticion Get del componente home
 }) => {
 
-    const { agregarPokemon, equipoS, eliminarPokemon } = useContext(FavoritePokemon)
     const [colorHearth, setColorHearth] = useState(false) // Controla el color del corazon de Fav
     const [first, setfirst] = useState({}) // contiene la toda la data general del pokemon, es recibida por las...
     // funciones [dataPokemonUnico, dataPokemonSearch] dentro del useEffect con el parametro '[buscadorPokemon]'
@@ -38,7 +38,6 @@ const PokemonComponent = ({
             data: [first, color1, color2],
             active: true
         })
-        console.log(focusPokemonControll);
     }
 
     const agregarFavoritos = () => {
@@ -73,6 +72,18 @@ const PokemonComponent = ({
                     const color1 = types[infoPokemonGeneral.types[0].type.name]
                     setColor1(color1)
                 }
+
+                if (equipoS.length > 0 && infoPokemonGeneral) {
+                    for (let index = 0; index < equipoS.length; index++) {
+                        const element = equipoS[index];
+                        if (element.data[0].name === infoPokemonGeneral.name) {
+                            setColorHearth(true)
+                            return
+                        } else {
+                            setColorHearth(false)
+                        }
+                    }
+                } else setColorHearth(false)
             }
         }
 
@@ -89,6 +100,18 @@ const PokemonComponent = ({
                     setColor1(color1)
                     setColor2(false)
                 }
+
+                if (equipoS.length > 0 && buscadorPokemon) {
+                    for (let index = 0; index < equipoS.length; index++) {
+                        const element = equipoS[index];
+                        if (element.data[0].name === buscadorPokemon.name) {
+                            setColorHearth(true)
+                            return
+                        } else {
+                            setColorHearth(false)
+                        }
+                    }
+                } else setColorHearth(false)
             }
         }
 
@@ -99,22 +122,6 @@ const PokemonComponent = ({
         return () => {
         }
     }, [buscadorPokemon])
-
-    useEffect(() => {
-        if (equipoS.length !== 0) {
-            for (let index = 0; index < equipoS.length; index++) {
-                const element = equipoS[index];
-                if (element.data[0].name === first.name) {
-                    setColorHearth(true)
-                    return
-                } else {
-                    setColorHearth(false)
-                }
-            }
-        } else setColorHearth(false)
-    }, [equipoS, focusPokemonControll])
-
-
 
     return (
         <div className='container-Card-Pokemon' onClick={(e) => {
