@@ -56,51 +56,25 @@ const FavoriteComponent = ({
 
         const dataPokemonUnico = async () => { // Esta funcion se ejecuta cuando la peticion tiene mas de un elemento pokemon
             // Inicio de la peticion get
-            setfirst(el)
+            const data = await el
+            setfirst(data)
 
-            if (Object.keys(first).length > 0) {
-                if (first.data[0].types.length > 1) {
-                    const color1 = types[first.data[0].types[0].type.name]
-                    const color2 = types[first.data[0].types[1].type.name]
+            if (data) {
+                if (data.data[0].types.length > 1) {
+                    const color1 = types[data.data[0].types[0].type.name]
+                    const color2 = types[data.data[0].types[1].type.name]
                     setColor1(color1)
                     setColor2(color2)
                 } else {
-                    const color1 = types[first.data[0].types[0].type.name]
-                    setColor1(color1)
-                }
-
-                if (equipoS.length > 0 && Object.keys(first).length > 0) {
-                    for (let index = 0; index < equipoS.length; index++) {
-                        const element = equipoS[index];
-                        if (element.data[0].name === first.data[0].name) {
-                            setColorHearth(true)
-                            return
-                        } else {
-                            setColorHearth(false)
-                        }
-                    }
-                } else setColorHearth(false)
-            }
-        }
-
-        const dataPokemonSearch = async () => { // Esta funcion se ejecuta cuando se busca un pokemon
-            setfirst(buscadorPokemon) // Setea el estado del componente con la data
-            if (buscadorPokemon) {
-                if (buscadorPokemon.types.length > 1) {
-                    const color1 = types[buscadorPokemon.types[0].type.name]
-                    const color2 = types[buscadorPokemon.types[1].type.name]
-                    setColor1(color1)
-                    setColor2(color2)
-                } else {
-                    const color1 = types[buscadorPokemon.types[0].type.name]
+                    const color1 = types[data.data[0].types[0].type.name]
                     setColor1(color1)
                     setColor2(false)
                 }
 
-                if (equipoS.length > 0 && buscadorPokemon) {
+                if (equipoS.length > 0 && data) {
                     for (let index = 0; index < equipoS.length; index++) {
                         const element = equipoS[index];
-                        if (element.data[0].name === buscadorPokemon.name) {
+                        if (element.data[0].name === data.data[0].name) {
                             setColorHearth(true)
                             return
                         } else {
@@ -111,25 +85,8 @@ const FavoriteComponent = ({
             }
         }
 
-        buscadorPokemon // Contiene la data de la peticion fetch del buscador de Pokemons
-            ? dataPokemonSearch()
-            : dataPokemonUnico()
-
-        return () => {
-        }
-    }, [buscadorPokemon, first])
-
-    useEffect(() => {
-        if (equipoS.length !== 0) {
-            equipoS.map(el => {
-                if (el.data[0].name === first.name && el.active) {
-                    return setColorHearth(true)
-                } else {
-                    return setColorHearth(false)
-                }
-            })
-        } else setColorHearth(false)
-    }, [equipoS])
+        dataPokemonUnico()
+    }, [el])
 
     return (
         <div className='container-Card-Pokemon' onClick={(e) => {
