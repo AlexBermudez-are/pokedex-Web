@@ -10,3 +10,15 @@
     padding-bottom: 2%;
     transition: all 1s ease;
 }
+
+.container-Padre {
+    display: flex;
+    overflow: hidden;
+}
+
+@media(max-width:425px) {
+    .container-Padre {
+        align-items: center;
+        justify-content: center;
+    }
+}

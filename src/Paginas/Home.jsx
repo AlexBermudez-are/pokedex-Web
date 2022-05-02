@@ -34,6 +34,7 @@ const Home = () => {
     useEffect(() => {
         const dataLocalStorage = localStorage.getItem("controllData")
         if (dataLocalStorage) setControllData(true)
+        window.scrollTo(0,0)
     }, [])
 
     window.addEventListener("beforeunload", e => {

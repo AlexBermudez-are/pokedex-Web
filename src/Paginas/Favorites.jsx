@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import { useEffect } from 'react'
 import { useContext } from 'react'
 import { useState } from 'react'
 import BodyFavorite from '../Components/FavoritePokemon/BodyFavorite'
@@ -15,6 +16,11 @@ const Favorites = () => {
     const [buscadorPokemon, setBuscadorPokemon] = useState()
     const [controllData, setControllData] = useState(true)
 
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+    
 
     return (
         <div>

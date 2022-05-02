@@ -7,8 +7,14 @@ import pokeballBottomLeft from '../Assets/Img/pokeball.png'
 import pokeballBottomRight from '../Assets/Img/pokeball.png'
 import pokeballSupRight from '../Assets/Img/pokeball.png'
 import Footer from '../Components/Footer/Footer'
+import { useEffect } from 'react'
 
 const About = () => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  
   return (
     <div>
       <Header />

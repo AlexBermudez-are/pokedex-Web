@@ -121,7 +121,7 @@ const PokemonComponent = ({
 
         return () => {
         }
-    }, [buscadorPokemon])
+    }, [equipoS,buscadorPokemon])
 
     return (
         <div className='container-Card-Pokemon' onClick={(e) => {
