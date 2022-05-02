@@ -17,6 +17,18 @@ const BuscadorPokemon = ({ setBuscadorPokemon, setControllSearchPokemon }) => {
     if (textoBusqueda.search.length > 0) {
       const url = `https://pokeapi.co/api/v2/pokemon/${minusculasSearch}`
       const getPokemonSearch = await axios.get(url)
+        .catch(function (error) {
+          if (error.response) {
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            alert(`Error: ${error.response.status}, intenta ingresar el nombre completo y verifica que sea correcto`)
+          } else if (error.request) {
+            // The request was made but no response was received
+            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+            // http.ClientRequest in node.js
+            alert("Esta tardando demasiado, intentalo despues")
+          } 
+        });
       const getDataPokemonSearch = await getPokemonSearch.data
       setBuscadorPokemon(getDataPokemonSearch)
       setControllSearchPokemon(true)
@@ -34,7 +46,7 @@ const BuscadorPokemon = ({ setBuscadorPokemon, setControllSearchPokemon }) => {
 
   return (
     <div className='contenedorBuscadorPokemon' onKeyUp={(e) => {
-      if(e.key==='Enter') submit()
+      if (e.key === 'Enter') submit()
     }}>
       <input
         autoComplete='off'
@@ -43,8 +55,8 @@ const BuscadorPokemon = ({ setBuscadorPokemon, setControllSearchPokemon }) => {
       <button
         className='btnSubmitBusquedaPokemon'
         onClick={submit}>
-          <LupaSvg/>
-        </button>
+        <LupaSvg />
+      </button>
     </div>
   )
 }
