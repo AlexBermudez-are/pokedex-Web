@@ -32,17 +32,33 @@ const GroupPokemonBody = () => {
 
     useEffect(() => {
         setPokemonActual(pokemonGroup[0])
-        if (pokemonGroup.length <= 3 && window.screen.availWidth === 425) {
-            setMQ({
+
+        if (window.screen.availWidth === 1440) {
+            return setMQ({
+                ...mQ,
+                height: "350px"
+            })
+        }
+
+        if (window.screen.availWidth === 1024) {
+            return setMQ({
+                ...mQ,
+                height: "65%"
+            })
+        }
+
+        if (pokemonGroup.length <= 3 && window.screen.availWidth <= 425) {
+            return setMQ({
                 ...mQ,
                 height: "35%"
             })
         } else {
-            setMQ({
+            return setMQ({
                 ...mQ,
                 height: "70%"
             })
         }
+
     }, [pokemonGroup])
 
     useEffect(() => {

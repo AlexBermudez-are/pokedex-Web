@@ -18,7 +18,7 @@
 
 .img-Icon-Pokemon-Component {
     width: 25%;
-    height: 173%;
+    height: 195%;
 }
 
 .container-Component-Icons-Pokemon p {
@@ -46,12 +46,15 @@
         margin: 0 auto;
         width: 100%;
     }
+    .img-Icon-Pokemon-Component {
+        height: 140%;
+    }
 }
 
 @media screen and (max-width:768px) {
     .img-Icon-Pokemon-Component {
         width: 60%;
-        height: 235%;
+        height: 175%;
     }
 
     .container-Component-Icons-Pokemon {
