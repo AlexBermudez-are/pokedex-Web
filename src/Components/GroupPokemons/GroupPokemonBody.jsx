@@ -13,8 +13,14 @@ const stats = {
     'special-attack': '#cf70ff', 'special-defense': '#7f70ff', 'speed': '#93ff70'
 }
 
+const mqConst = {
+    width: "",
+    height: ""
+}
+
 const GroupPokemonBody = () => {
 
+    const [mQ, setMQ] = useState(mqConst)
     const { pokemonGroup, statDominator, eliminarPokemon } = useContext(PokemonGroup)
     const [pokemonActual, setPokemonActual] = useState()
     const [statDominatingColor, setStatDominatingColor] = useState()
@@ -26,11 +32,18 @@ const GroupPokemonBody = () => {
 
     useEffect(() => {
         setPokemonActual(pokemonGroup[0])
-
-        if (pokemonActual) {
-            console.log(pokemonActual)
+        if (pokemonGroup.length <= 3 && window.screen.availWidth === 425) {
+            setMQ({
+                ...mQ,
+                height: "35%"
+            })
+        } else {
+            setMQ({
+                ...mQ,
+                height: "70%"
+            })
         }
-    }, [])
+    }, [pokemonGroup])
 
     useEffect(() => {
         const colorStat = stats[statDominator]
@@ -62,7 +75,13 @@ const GroupPokemonBody = () => {
                             </div>
                         </section>
                         <section className="info-PokemonGroup">
-                            <div className="team-Icons-Pokemon-Group">
+                            <div
+                                className="team-Icons-Pokemon-Group"
+                                style={{
+                                    width: mQ.width,
+                                    height: mQ.height
+                                }}
+                            >
                                 {
                                     Object.keys(pokemonGroup).length !== 0
                                         ? pokemonGroup.map((el, index) => <PokemonGroupComponent
@@ -84,7 +103,7 @@ const GroupPokemonBody = () => {
                             </div>
                         </section>
                     </div>
-                    : <SpinnerNoPokemons/>
+                    : <SpinnerNoPokemons />
             }
         </section>
     )

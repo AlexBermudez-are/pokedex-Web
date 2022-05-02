@@ -66,42 +66,102 @@
     border-radius: 10px;
 }
 
-@media(max-width:1024px){
-    .body-Pokemon-G{
+@media(max-width:1024px) {
+    .body-Pokemon-G {
         height: 560px;
     }
-    .slider-Pokemon-Group{
+
+    .slider-Pokemon-Group {
         width: 60%;
     }
-    .slider-Pokemon{
+
+    .slider-Pokemon {
         height: 450px;
     }
-    .info-PokemonGroup{
+
+    .info-PokemonGroup {
         height: 400px;
     }
-    .team-Icons-Pokemon-Group{
+
+    .team-Icons-Pokemon-Group {
         height: 65%;
     }
 }
 
+@media screen and (max-width:768px) {
+    .body-Pokemon-G {
+        flex-direction: column-reverse;
+        height: 849px;
+        margin-bottom: 10%;
+    }
+
+    .slider-Pokemon-Group {
+        width: 80%;
+    }
+
+    .slider-Pokemon {
+        height: 400px;
+    }
+
+    .card-Slider-Pokemon {
+        border-radius: 50px;
+    }
+
+    .container-White-Background {
+        border-radius: 50px;
+    }
+
+    .info-PokemonGroup {
+        height: 430px;
+        width: 70%;
+    }
+
+    .team-Icons-Pokemon-Group {
+        height: 55%;
+    }
+}
+
+
 @media(max-width:425px) {
     .body-Pokemon-G {
         flex-direction: column-reverse;
+        height: 650px;
+        margin-bottom: 70%;
     }
 
     .info-PokemonGroup {
         display: flex;
-        width: 95%;
+        height: 65%;
         margin: auto;
-        margin-top: 40%;
+        margin-top: 10%;
+        margin-bottom: 0;
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    .info-Pokemon-Unique {
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-Pokemon-Unique h1,
+    .info-Pokemon-Unique p {
+        margin: 0;
     }
 
     .team-Icons-Pokemon-Group {
-        height: inherit;
+        height: 70%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 90%;
+        margin: auto;
     }
 
     .slider-Pokemon-Group {
-        width: 90%;
+        height: 20%;
         margin: auto;
     }
 
